@@ -13,7 +13,7 @@
 						<div class="col-lg-12 col-md-12">
                             <div class="modern-title"><h3>Please fill the form below, We will response soon.</h3> </div>
                             
-                            <form action="{{ route('posts.update',$post->id) }}" method="POST">
+                            <form action="{{ route('posts.update',$post->id) }}" method="POST" enctype="multipart/form-data">
 
                                     <input type="hidden" name="_method" value="PUT">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -28,6 +28,14 @@
                                 <label for="pwd">Body:</label>
                                 <textarea required="" class="form-control" name="body" >{{$post->body}}</textarea>
                             </div>
+
+                            <div class="form-group">
+                                    <input type="file" name="cover_image">
+    
+    
+    
+                                </div>
+                                
                             
                             <button type="submit" class="btn btn-default">Submit</button>
                             </form> 
